@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const Settings = global.Settings = require("./Settings/Settings.json");
-
+const express = require('express');
+const app = express();
 console.log("Launching bot...");
 let _client = new Discord.Client();
 if (Settings.Private_Server === true) {
@@ -77,3 +78,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 
 OUT OF OR IN */
+
+app.get('/', async (req,res) =>{
+  return res.send('Follow documentation ')
+})
+
+
+app.listen(8999, () => {
+
+})
